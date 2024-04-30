@@ -1,0 +1,69 @@
+Creating a Database:
+sql
+Copy code
+CREATE DATABASE IF NOT EXISTS example_db;
+USE example_db;
+
+Creating a Table:
+sql
+Copy code
+CREATE TABLE IF NOT EXISTS employees (
+    id INT,
+    name STRING,
+    age INT,
+    salary FLOAT
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+STORED AS TEXTFILE;
+
+Creating a Partitioned Table:
+sql
+Copy code
+CREATE TABLE employees_partitioned (
+    name STRING,
+    age INT,
+    salary FLOAT
+)
+PARTITIONED BY (id INT)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+STORED AS TEXTFILE;
+
+Adding Data to a Partition:
+LOAD DATA LOCAL INPATH '/path/to/data.csv' INTO TABLE employees_partitioned PARTITION (id=1);
+
+
+4. Hive Built-in Functions and Operators
+Hive supports numerous built-in functions and operators for operations like mathematical calculations, string handling, date manipulation, and more.
+
+Example Functions:
+Mathematical: ROUND(), CEIL(), FLOOR()
+String: CONCAT(), SUBSTR(), LENGTH()
+Date: TO_DATE(), YEAR(), DATEDIFF()
+Operators: Hive supports standard operators such as =, <>, >, <, >=, <=, AND, OR, and NOT.
+5. Hive Views
+Views in Hive are virtual tables based on the result-set of an SQL statement. They are used to simplify complex queries.
+
+Creating a View:
+sql
+Copy code
+CREATE VIEW IF NOT EXISTS emp_view AS
+SELECT name, age FROM employees WHERE salary > 50000;
+6. Hive Indexes
+Indexes in Hive help speed up query processing on certain columns of a Hive table.
+
+Creating an Index:
+sql
+Copy code
+CREATE INDEX idx_salary ON TABLE employees (salary)
+AS 'COMPACT'
+WITH DEFERRED REBUILD;
+Rebuilding an Index:
+sql
+Copy code
+ALTER INDEX idx_salary ON employees REBUILD;
+Dropping an Index:
+sql
+Copy code
+DROP INDEX IF EXISTS idx_salary ON employees;

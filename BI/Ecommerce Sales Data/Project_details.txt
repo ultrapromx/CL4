@@ -1,0 +1,36 @@
+*** PowerBI Dashboard Project***
+
+
+**E-COMMERCE SALES DASHBOARD**
+
+
+PowerBI - Its is a business intelligence and data visualization tool that converts data from various sources into interactive dashboards and analysis reports.
+
+
+Report View - Dashboard(charts, Graphs)
+Data View - Tables, DAX queries
+Model View - relationships between tables
+
+
+Project Key Points
+- Data collection
+- Data cleaning and wrangling
+- Data Modelling
+- Data Visualization
+- Dashboard design
+- Sharing Insights
+
+
+Project Objective - 
+Owner of E-commerce STORE OWNER wants us to help them craete a dashboard to track and analyze their online sales across india
+
+
+- Analyze e-commerce sales data 
+- create interactive dashboard using PowerBI
+
+
+Project Learnings - 
+- Created Interactive dashboard to track and analyze online sales data 
+- used complex parameters to drill down in worksheet and customization using filters and slicers
+- created connections, join new tables, calculations to manipulate data and enable user driven parameters for visualizations
+- used different types of customized visualization (bar chart, pie chart, donut chart, clustered bar chart, scatter chart, line chart, area chart, map, slicers, etc)
